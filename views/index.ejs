@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>✈️ Let's go on an adventure</h1>
+        <p>So many places to explore: you have <%= numberOfCountries %> countries in your wishlist!</p>
+        <ul>
+            <% countries.forEach((country) => { %>
+                <li class="pb-2">
+                    <strong><%= country.name %></strong>
+                    <br/>
+                    Already visited? <%= country.visited ? "Yes, congrats!" : "Not yet!" %>
+                </li>
+            <% }); %>
+        </ul>
+
+        <form class="w-50" action="/api/countries" method="POST">
+            <div class="form-group">
+              <label for="countryName">Country Name</label>
+              <input type="text" class="form-control" id="countryName" aria-describedby="countryNameHelp" placeholder="Country Name" name="name">
+              <small id="countryNameHelp" class="form-text text-muted">Enter the name of a country you wish to visit!</small>
+            </div>
+            <div class="form-group">
+              <label for="countryISO2">Iso Alpha 2</label>
+              <input type="text" class="form-control" id="countryISO2" aria-describedby="countryISO2Help" placeholder="ISO Alpha 2 Code" name="alpha2Code">
+              <small id="countryISO2Help" class="form-text text-muted">Enter the ISO Alpha 2 Code of the country <a href="https://www.iban.com/country-codes" target="_blank" rel="noopener" rel="noreferrer">(Find Code)</a>!</small>
+            </div>
+            <div class="form-group">
+                <label for="countryISO2">Iso Alpha 3</label>
+                <input type="text" class="form-control" id="countryISO3" aria-describedby="countryISO3Help" placeholder="ISO Alpha 3 Code" name="alpha3Code">
+                <small id="countryISO3Help" class="form-text text-muted">Enter the ISO Alpha 3 Code of the country <a href="https://www.iban.com/country-codes" target="_blank" rel="noopener" rel="noreferrer">(Find Code)</a>!</small>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+
+    </div>
+</main>
+
+<footer>
+    <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>
