@@ -48,7 +48,7 @@ wishlistRouter.put("/:code", countryValidations, (req, res) => {
     // (for the bonus of part 5)
     country.visited = visited
 
-    res.status(200).send(country);
+    res.status(200).json(country);
   }
 });
 
@@ -77,7 +77,7 @@ wishlistRouter.delete("/:code", (req, res) => {
     if (country.visited) return res.status(403).send("This country has already been visited! Good job you!")
     country.visited = true
 
-    res.status(200).send(country);
+    res.status(200).json(country);
   }
 });
 
@@ -114,7 +114,7 @@ wishlistRouter.post("/", countryValidations, (req, res) => {
     visited: false
   };
   countries.push(newCountry);
-  res.status(201).send(newCountry);
+  res.status(201).json(newCountry);
 
 //   Or, for step 7, redirect the user back to the home page after adding the country:
 //   res.status(201).redirect('/home')
@@ -154,9 +154,9 @@ wishlistRouter.get("/", (req, res) => {
     // So here, we use the spread syntax + the array literal syntax to instantiate
     // a new array with the values of the target one, and we sort the new array:
     const sortedCountries = [...countries].sort(compareAlphabetically);
-    res.send(sortedCountries);
+    res.json(sortedCountries);
   } else {
-    res.send(countries);
+    res.json(countries);
   }
 
     // ###################################################### //
@@ -189,7 +189,7 @@ wishlistRouter.get("/", (req, res) => {
 //       res.json(filteredCountries)
 
 //   } else {
-//     res.send(countries);
+//     res.json(countries);
 //   }
 
 });
