@@ -1,7 +1,7 @@
 # 🌴 The Travel WishList ✈️
 
 - ##### This repo contains the correction to the following **Node + Express** exercise. 
-- ##### Documentation of the finished API can be found ([here](https://documenter.getpostman.com/view/14782056/TWDfCsnc)
+- ##### Documentation of the finished API can be found [here](https://documenter.getpostman.com/view/14782056/TWDfCsnc)
 
 ![The Travel WishList](https://raw.githubusercontent.com/MyElectricSheep/node-express-travel-wishlist/main/travel.jpg)
 
